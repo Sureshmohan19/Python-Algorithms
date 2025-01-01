@@ -118,11 +118,13 @@ def find_all_permutations(
         
         # Try each element in current position
         for i in range(start, len(array)):
-            # Swap the current element with the element at the current position
+            """ 
+            1. Swap the current element with the element at the current position
+            2. Recurse on the next position
+            3. Backtrack by swapping the current element with the element at the current position
+            """
             array[start], array[i] = array[i], array[start]
-            # Recurse on the next position
             backtrack(start + 1)
-            # Backtrack by swapping the current element with the element at the current position
             array[start], array[i] = array[i], array[start]
 
     # Start the backtracking process from the first element
